@@ -1,0 +1,1024 @@
+﻿*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.section {
+    height: 100%;
+}
+
+/* 指引下滑图标 */
+.arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 41px;
+    margin-left: -21px;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+    -moz-animation: start 1.5s infinite ease-in-out;
+    animation: start 1.5s infinite ease-in-out;
+}
+
+/* 上下查看图标 */
+.u-arrow {
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    z-index: 150;
+    width: 32px;
+    height: 90px;
+    margin: -45px 0 0 0;
+}
+.u-arrow img {
+    width: 100%;
+    -webkit-transition: all 0.5s ease-out .2s;
+    -moz-transition: all 0.5s ease-out .2s;
+    transition: all 0.5s ease-out .2s;
+}
+
+.u-arrow img:hover {
+    cursor: pointer;
+    background: rgb(177,220,237);
+}
+
+/* 广告按钮 */
+.advert {
+    position: fixed;
+    bottom: 10%;
+    right: 0%;
+    z-index: 150;
+    -webkit-transition: all 1s ease-out .2s;
+    -moz-transition: all 1s ease-out .2s;
+    transition: all 1s ease-out .2s;
+}
+.advert:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#advert {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -258px 0 0 -512px;
+    opacity: 0;
+    z-index: -1;
+}
+
+#advert:hover {
+    cursor: pointer;
+}
+
+#advert img {
+    width: 100%;
+}
+
+#advert .close {
+    position: absolute;
+    top: -20px;
+    right: -18px;
+    width: 32px;
+    height: 32px;
+    background: url('../img/close.png') center center no-repeat;
+}
+
+#advert.hide {
+    -webkit-animation: advert 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+    -moz-animation: advert 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+    animation: advert 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+}
+
+#advert.active {
+    -webkit-animation: advert_active 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+    -moz-animation: advert_active 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+    animation: advert_active 1s cubic-bezier(0.86, 0, 0.07, 1) 0s 1 both;
+}
+
+/* 指引下滑图标动画 */
+@-webkit-keyframes start {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+    }
+}
+
+@-moz-keyframes start {
+    0%, 30% {
+        opacity: 0;
+        -moz-transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        -moz-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: translate(0, -8px);
+    }
+}
+
+@keyframes start {
+    0%, 30% {
+        opacity: 0;
+        transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -8px);
+    }
+}
+
+/* 广告动画显示 */
+@-webkit-keyframes advert_active {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0);
+    }
+    30% {
+        -webkit-transform: scale(.5);
+    }
+    80% {
+        -webkit-transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        z-index: 101;
+        -webkit-transform: scale(1);
+    }
+}
+
+@-moz-keyframes advert_active {
+    0% {
+        opacity: 0;
+        -moz-transform: scale(0);
+    }
+    30% {
+        -moz-transform: scale(.5);
+    }
+    80% {
+        -moz-transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        z-index: 101;
+        -moz-transform: scale(1);
+    }
+}
+
+@keyframes advert_active {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(.5);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        z-index: 101;
+        transform: scale(1);
+    }
+}
+
+/* 广告动画隐藏 */
+@-webkit-keyframes advert {
+    0% {
+        opacity: 1;
+        z-index: 101;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        -webkit-transform: scale(0);
+    }
+}
+@-moz-keyframes advert {
+    0% {
+        opacity: 1;
+        z-index: 101;
+        -moz-transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        -moz-transform: scale(0);
+    }
+}
+@keyframes advert {
+    0% {
+        opacity: 1;
+        z-index: 101;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        transform: scale(0);
+    }
+}
+
+#layer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    background: #000000;
+}
+
+#layer.hide {
+    -webkit-animation: layerhide 1s linear 0s 1 both;
+    -moz-animation: layerhide 1s linear 0s 1 both;
+    animation: layerhide 1s linear 0s 1 both;
+}
+
+#layer.active {
+    -webkit-animation: layershow 1s linear 0s 1 both;
+    -moz-animation: layershow 1s linear 0s 1 both;
+    animation: layershow 1s linear 0s 1 both;
+}
+/* 弹出层显示 */
+@-webkit-keyframes layershow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+}
+@-moz-keyframes layershow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+}
+@keyframes layershow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+}
+/* 弹出层隐藏 */
+@-webkit-keyframes layerhide {
+    0% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@-moz-keyframes layerhide {
+    0% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@keyframes layerhide {
+    0% {
+        opacity: 0.6;
+        z-index: 100;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/* 总容器 */
+#fullpage {
+    position: relative;
+}
+
+/* 导航 */
+header {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    z-index: 99;
+}
+
+.wrap {
+    margin: 0 30px;
+    position: relative;
+}
+
+.logo {
+    opacity: 0.6;
+    -webkit-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    -moz-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 1s cubic-bezier(0.86, 0, 0.07, 1)
+}
+
+.logo.active {
+    opacity: 1;
+}
+
+.logo img,
+.logo a {
+    display: block;
+}
+
+#logo2 {
+    margin: 7px 0 0 0;
+}
+
+nav {
+    margin-left: 40px;
+    height: 40px;
+}
+
+nav ul li {
+    float: left;
+    height: 40px;
+    padding: 0 12px;
+}
+
+nav ul li a {
+    font-size: 15px;
+    color: rgb(68,68,68);
+    line-height: 40px;
+    height: 40px;
+    display: inline-block;
+    background: white;
+}
+
+nav ul li.current a,
+nav ul li:hover a {
+    background: url(../img/navhover.png) left 33px no-repeat;
+}
+
+nav ul li a span {
+    color: rgb(166, 43, 76);
+}
+
+/* js轮播 */
+#china-slide {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 700px;
+    margin: 0 0 0 -350px;
+}
+#china-slide .items li img {
+    width: 700px;
+    height: 370px;
+}
+/* 研发故事轮播 */
+#develop-slide {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 700px;
+    height: 300px;
+    margin: -130px 0 0 -350px;
+}
+#develop-slide-box {
+    height: 300px;
+}
+
+/* 传奇人物 */
+.intro-bg {
+    opacity: .4;
+}
+
+.csstransitions .intro-bg {
+    opacity: 0.4;
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -webkit-transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) .4s;
+    -moz-transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) .4s;
+    transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) .4s;
+}
+
+.intro-bg {
+    height: 340px;
+    width: 100%;
+    top: 65%;
+    position: absolute;
+    margin: -170px 0 0 0px;
+}
+
+.intro-bg-left {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    height: 335px;
+}
+
+.intro-bg-left ul,
+.intro-bg-right ul {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro-bg li {
+    float: left;
+    display: block;
+    width: 535px;
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=40);
+}
+
+.intro-bg img {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.intro-bg-left li.jump {
+    -webkit-animation: ue-pudding 2s linear alternate;
+    -moz-animation: ue-pudding 2s linear alternate;
+    animation: ue-pudding 2s linear alternate;
+}
+.intro-bg-right li.jump {
+    -webkit-animation: ue-pudding 2s linear;
+    -moz-animation: ue-pudding 2s linear;
+    animation: ue-pudding 2s linear;
+}
+
+.intro-bg-right {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    height: 335px;
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 600px;
+    margin: -300px 0 0 -400px;
+}
+
+.title {
+    margin: 40px 0 10px 0;
+}
+
+.csstransitions .intro-screen {
+    opacity: .8;
+    transform: translateY(400px);
+    -webkit-transform: translateY(400px);
+    -moz-transform: translateY(400px);
+    -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+}
+
+.intro-screen {
+    position: relative;
+    width: 750px;
+    height: 420px;
+    background: url('../img/videobg.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    margin: 0 25px;
+}
+
+.screen {
+    width: 550px;
+    height: 400px;
+    position: absolute;
+    top: 20px;
+    left: 102px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*.csstransitions ul {
+    -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+}
+*/
+
+.screen ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 9999%;
+/*    -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) .4s;*/
+}
+
+.screen li {
+    float: left;
+    display: block;
+    width: 550px;
+    height: 400px;
+}
+
+.screen li img {
+    width: 100%;
+}
+
+/* 传奇任务描述 */
+.screen .description {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    background: #FFF;
+    opacity: 0.6;
+    padding: 10px;
+    font-size: 12px;
+}
+
+@keyframes ue-pudding {
+    0% {
+        transform: scale(1.2, 0.8)
+    }
+    1% {
+        transform: scale(1.18, 0.82)
+    }
+    2% {
+        transform: scale(1.16, 0.84)
+    }
+    3% {
+        transform: scale(1.13, 0.87)
+    }
+    4% {
+        transform: scale(1.1, 0.9)
+    }
+    5% {
+        transform: scale(1.07, 0.93)
+    }
+    6% {
+        transform: scale(1.04, 0.96)
+    }
+    7% {
+        transform: scale(1.01, 0.99)
+    }
+    8% {
+        transform: scale(0.99, 1.01)
+    }
+    9% {
+        transform: scale(0.97, 1.03)
+    }
+    10% {
+        transform: scale(0.95, 1.05)
+    }
+    11% {
+        transform: scale(0.94, 1.06)
+    }
+    12% {
+        transform: scale(0.93, 1.07)
+    }
+    13% {
+        transform: scale(0.93, 1.07)
+    }
+    14% {
+        transform: scale(0.93, 1.07)
+    }
+    15% {
+        transform: scale(0.93, 1.07)
+    }
+    16% {
+        transform: scale(0.94, 1.06)
+    }
+    17% {
+        transform: scale(0.94, 1.06)
+    }
+    18% {
+        transform: scale(0.95, 1.05)
+    }
+    19% {
+        transform: scale(0.96, 1.04)
+    }
+    20% {
+        transform: scale(0.98, 1.02)
+    }
+    21% {
+        transform: scale(0.99, 1.01)
+    }
+    22% {
+        transform: scale(1, 1)
+    }
+    23% {
+        transform: scale(1, 1)
+    }
+    24% {
+        transform: scale(1.01, 0.99)
+    }
+    25% {
+        transform: scale(1.02, 0.98)
+    }
+    26% {
+        transform: scale(1.02, 0.98)
+    }
+    27% {
+        transform: scale(1.02, 0.98)
+    }
+    28% {
+        transform: scale(1.03, 0.97)
+    }
+    29% {
+        transform: scale(1.03, 0.97)
+    }
+    30% {
+        transform: scale(1.02, 0.98)
+    }
+    31% {
+        transform: scale(1.02, 0.98)
+    }
+    32% {
+        transform: scale(1.02, 0.98)
+    }
+    33% {
+        transform: scale(1.02, 0.98)
+    }
+    34% {
+        transform: scale(1.01, 0.99)
+    }
+    35% {
+        transform: scale(1.01, 0.99)
+    }
+    36% {
+        transform: scale(1.01, 0.99)
+    }
+    37% {
+        transform: scale(1, 1)
+    }
+    38% {
+        transform: scale(1, 1)
+    }
+    39% {
+        transform: scale(1, 1)
+    }
+    40% {
+        transform: scale(0.99, 1.01)
+    }
+    41% {
+        transform: scale(0.99, 1.01)
+    }
+    42% {
+        transform: scale(0.99, 1.01)
+    }
+    43% {
+        transform: scale(0.99, 1.01)
+    }
+    44% {
+        transform: scale(0.99, 1.01)
+    }
+    45% {
+        transform: scale(0.99, 1.01)
+    }
+    46% {
+        transform: scale(0.99, 1.01)
+    }
+    47% {
+        transform: scale(0.99, 1.01)
+    }
+    48% {
+        transform: scale(0.99, 1.01)
+    }
+    49% {
+        transform: scale(1, 1)
+    }
+}
+@-webkit-keyframes ue-pudding {
+    0% {
+        -webkit-transform: scale(1.2, 0.8)
+    }
+    1% {
+        -webkit-transform: scale(1.18, 0.82)
+    }
+    2% {
+        -webkit-transform: scale(1.16, 0.84)
+    }
+    3% {
+        -webkit-transform: scale(1.13, 0.87)
+    }
+    4% {
+        -webkit-transform: scale(1.1, 0.9)
+    }
+    5% {
+        -webkit-transform: scale(1.07, 0.93)
+    }
+    6% {
+        -webkit-transform: scale(1.04, 0.96)
+    }
+    7% {
+        -webkit-transform: scale(1.01, 0.99)
+    }
+    8% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    9% {
+        -webkit-transform: scale(0.97, 1.03)
+    }
+    10% {
+        -webkit-transform: scale(0.95, 1.05)
+    }
+    11% {
+        -webkit-transform: scale(0.94, 1.06)
+    }
+    12% {
+        -webkit-transform: scale(0.93, 1.07)
+    }
+    13% {
+        -webkit-transform: scale(0.93, 1.07)
+    }
+    14% {
+        -webkit-transform: scale(0.93, 1.07)
+    }
+    15% {
+        -webkit-transform: scale(0.93, 1.07)
+    }
+    16% {
+        -webkit-transform: scale(0.94, 1.06)
+    }
+    17% {
+        -webkit-transform: scale(0.94, 1.06)
+    }
+    18% {
+        -webkit-transform: scale(0.95, 1.05)
+    }
+    19% {
+        -webkit-transform: scale(0.96, 1.04)
+    }
+    20% {
+        -webkit-transform: scale(0.98, 1.02)
+    }
+    21% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    22% {
+        -webkit-transform: scale(1, 1)
+    }
+    23% {
+        -webkit-transform: scale(1, 1)
+    }
+    24% {
+        -webkit-transform: scale(1.01, 0.99)
+    }
+    25% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    26% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    27% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    28% {
+        -webkit-transform: scale(1.03, 0.97)
+    }
+    29% {
+        -webkit-transform: scale(1.03, 0.97)
+    }
+    30% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    31% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    32% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    33% {
+        -webkit-transform: scale(1.02, 0.98)
+    }
+    34% {
+        -webkit-transform: scale(1.01, 0.99)
+    }
+    35% {
+        -webkit-transform: scale(1.01, 0.99)
+    }
+    36% {
+        -webkit-transform: scale(1.01, 0.99)
+    }
+    37% {
+        -webkit-transform: scale(1, 1)
+    }
+    38% {
+        -webkit-transform: scale(1, 1)
+    }
+    39% {
+        -webkit-transform: scale(1, 1)
+    }
+    40% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    41% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    42% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    43% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    44% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    45% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    46% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    47% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    48% {
+        -webkit-transform: scale(0.99, 1.01)
+    }
+    49% {
+        -webkit-transform: scale(1, 1)
+    }
+}
+@-moz-keyframes ue-pudding {
+    0% {
+        -moz-transform: scale(1.2, 0.8)
+    }
+    1% {
+        -moz-transform: scale(1.18, 0.82)
+    }
+    2% {
+        -moz-transform: scale(1.16, 0.84)
+    }
+    3% {
+        -moz-transform: scale(1.13, 0.87)
+    }
+    4% {
+        -moz-transform: scale(1.1, 0.9)
+    }
+    5% {
+        -moz-transform: scale(1.07, 0.93)
+    }
+    6% {
+        -moz-transform: scale(1.04, 0.96)
+    }
+    7% {
+        -moz-transform: scale(1.01, 0.99)
+    }
+    8% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    9% {
+        -moz-transform: scale(0.97, 1.03)
+    }
+    10% {
+        -moz-transform: scale(0.95, 1.05)
+    }
+    11% {
+        -moz-transform: scale(0.94, 1.06)
+    }
+    12% {
+        -moz-transform: scale(0.93, 1.07)
+    }
+    13% {
+        -moz-transform: scale(0.93, 1.07)
+    }
+    14% {
+        -moz-transform: scale(0.93, 1.07)
+    }
+    15% {
+        -moz-transform: scale(0.93, 1.07)
+    }
+    16% {
+        -moz-transform: scale(0.94, 1.06)
+    }
+    17% {
+        -moz-transform: scale(0.94, 1.06)
+    }
+    18% {
+        -moz-transform: scale(0.95, 1.05)
+    }
+    19% {
+        -moz-transform: scale(0.96, 1.04)
+    }
+    20% {
+        -moz-transform: scale(0.98, 1.02)
+    }
+    21% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    22% {
+        -moz-transform: scale(1, 1)
+    }
+    23% {
+        -moz-transform: scale(1, 1)
+    }
+    24% {
+        -moz-transform: scale(1.01, 0.99)
+    }
+    25% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    26% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    27% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    28% {
+        -moz-transform: scale(1.03, 0.97)
+    }
+    29% {
+        -moz-transform: scale(1.03, 0.97)
+    }
+    30% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    31% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    32% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    33% {
+        -moz-transform: scale(1.02, 0.98)
+    }
+    34% {
+        -moz-transform: scale(1.01, 0.99)
+    }
+    35% {
+        -moz-transform: scale(1.01, 0.99)
+    }
+    36% {
+        -moz-transform: scale(1.01, 0.99)
+    }
+    37% {
+        -moz-transform: scale(1, 1)
+    }
+    38% {
+        -moz-transform: scale(1, 1)
+    }
+    39% {
+        -moz-transform: scale(1, 1)
+    }
+    40% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    41% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    42% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    43% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    44% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    45% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    46% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    47% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    48% {
+        -moz-transform: scale(0.99, 1.01)
+    }
+    49% {
+        -moz-transform: scale(1, 1)
+    }
+}
